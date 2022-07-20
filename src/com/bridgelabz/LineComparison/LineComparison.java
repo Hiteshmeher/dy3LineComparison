@@ -11,16 +11,16 @@ public class LineComparison {
 	 */
 	public static void main(String[] args) {
 		/**
-		 * assigning four coordinates which will make two straight lines
+		 * assigning four cordinates which will make two straight lines
 		 * calculating the distance of two lines
-		 * comparing the two lines which is greater using compareTo method
+		 * comparing the two lines are equal or not , using equalsTo method
 		 * 
 		 */
 		System.out.println("Welcome to Line Comparison computation");
 		int x1 = 3;
 		int x2 = 7;
 		int y1 = 4;
-		int y2 = 2;
+		int y2 = 3;
 		int a1 = 4;
 		int a2 = 9;
 		int b1 = 6;
@@ -34,10 +34,5 @@ public class LineComparison {
 	    Integer obj1 = new Integer((int) disOfFirstLine);
 	    Integer obj2 = new Integer((int) disOfSecondLine);
 	    System.out.println("these lines are equal :" + obj1.equals(obj2));
-	    if (+obj1.compareTo(obj2) > 0 ) {
-	    	System.out.println("Length of first line is greater");
-	    } else {
-	    	System.out.println("Length of Second line is greater");
-	    }
 	}
 }
