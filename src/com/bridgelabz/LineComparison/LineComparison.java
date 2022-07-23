@@ -1,43 +1,71 @@
 package com.bridgelabz.LineComparison;
+
+import java.util.Scanner;
 /**
  * 
- * @author LENOVO
+ * @author HITESH
  *
  */
 public class LineComparison {
 	/**
-	 * 
-	 * @param args
+	 * taking 4 variables
+	 * taking scanner function
 	 */
-	public static void main(String[] args) {
+	int x1, x2, y1, y2;
+	double disOfFirstLine;
+	double disOfSecondLine;
+	static Scanner input = new Scanner(System.in);
+	
+	public void input() {
 		/**
-		 * assigning four coordinates which will make two straight lines
-		 * calculating the distance of two lines
-		 * comparing the two lines which is greater using compareTo method
-		 * 
+		 * taking 4 coordinates from user
 		 */
-		System.out.println("Welcome to Line Comparison computation");
-		int x1 = 3;
-		int x2 = 7;
-		int y1 = 4;
-		int y2 = 2;
-		int a1 = 4;
-		int a2 = 9;
-		int b1 = 6;
-		int b2 = 5;
-	    double disOfFirstLine = Math.sqrt(Math.pow((x2-x1), 2) + Math.pow((y2-y1), 2));
-	    double disOfSecondLine = Math.sqrt(Math.pow((a2-a1), 2) + Math.pow((b2-b1), 2));
-	    System.out.println("Two points are (x1,y1)(3,4) and (x2,y2)(7,2)");
-	    System.out.println("Another Two points are (a1,b1)(4,6) and (a2,b2)(9,5)");
-	    System.out.println("Length of the first line (3,4)(7,2) is " + disOfFirstLine);
-	    System.out.println("Length of the second line (4,6)(9,5) is " + disOfSecondLine);
-	    Integer obj1 = new Integer((int) disOfFirstLine);
-	    Integer obj2 = new Integer((int) disOfSecondLine);
-	    System.out.println("these lines are equal :" + obj1.equals(obj2));
-	    if (+obj1.compareTo(obj2) > 0 ) {
-	    	System.out.println("Length of first line is greater");
-	    } else {
-	    	System.out.println("Length of Second line is greater");
-	    }
+		System.out.println("Enter value for x1");
+		x1= input.nextInt();
+		System.out.println("Enter value for x2");
+		x2= input.nextInt();
+		System.out.println("Enter value for y1");
+		y1= input.nextInt();
+		System.out.println("Enter value for y2");
+		y2= input.nextInt();
+		System.out.println("Two points are " + x1 + "," + x2+ " and " + y1+"," +y2);
+	}
+	
+	public void firstDistance() {
+		/**
+		 * calculating distance for first line
+		 */
+		input();
+		disOfFirstLine = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+		System.out.println("Length of the first line is " + disOfFirstLine);
+		return;
+	}
+	
+	public void SecondDistance() {
+		/**
+		 * calculating distance for second line
+		 */
+		input();
+		disOfSecondLine = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+		System.out.println("Length of the second line is " + disOfSecondLine);
+	}
+	
+	public void Compring() {
+		/**
+		 * taking value of first distance and second distance
+		 * comparing two lines using compareTo method
+		 */
+		firstDistance();
+		SecondDistance();
+		@SuppressWarnings("removal")
+		Integer obj1 = new Integer((int) disOfFirstLine);
+		@SuppressWarnings("removal")
+		Integer obj2 = new Integer((int) disOfSecondLine);
+		System.out.println("these lines are equal :" +obj1.equals(obj2));
+		if (+obj1.compareTo(obj2) > 0) {
+			System.out.println("Length of first line is greater");
+		} else {
+			System.out.println("Length of Second line is greater");
+		}
 	}
 }
